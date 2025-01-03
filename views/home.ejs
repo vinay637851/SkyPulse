@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SkyPulse</title>
+    <link rel="shortcut icon" href="weather.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <h1><img src="weather.png" alt=""><span>Sky<span>Pulse</span></span></h1>
+        <div>
+            <p>Welcome, <%=name%></p>
+            <a href="/weather/logout"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <input type="text" placeholder="Search your city weather" id="result" autofocus required>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div class="weather-info">
+        <span class="loding_container"></span>
+        <div id="city_name">- -</div>
+        <div class="des">
+            <img src="#" alt="." id="img">
+            <div>
+                <h1 id="temp">- -</h1>
+                <h2 id="description">- -</h2>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="part">
+                <p>Temperature</p>
+                <div>
+                    <i class="fa-solid fa-temperature-three-quarters"></i>
+                    <h3 id="temp2">- -</h3>
+                </div>
+                <span id="temp_info">- -</span>
+            </div>
+            <div class="part">
+                <p>Humidity</p>
+                <div>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3 id="humidity">- -</h3>
+                </div>
+                <span id="humidity_info">- -</span>
+            </div>
+            <div class="part">
+                <p>Wind</p>
+                <div>
+                    <i class="fa-solid fa-wind"></i>
+                    <h3 id="wind">- -</h3>
+                </div>
+                <span id="wind_info">- -</span>
+            </div>
+            <div class="part">
+                <p>Visibility</p>
+                <div>
+                    <i class="fa-regular fa-eye"></i>
+                    <h3 id="visibility">- -</h3>
+                </div>
+                <span id="visibility_info">- -</span>
+            </div>
+            <div class="part">
+                <p>Cloud Cover</p>
+                <div>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3 id="cloud">- -</h3>
+                </div>
+                <span id="cloud_info">- -</span>
+            </div>
+            <div class="part">
+                <p>Air Pressure</p>
+                <div>
+                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                    <h3 id="pressure">- -</h3>
+                </div>
+                <span id="pressure_info">- -</span>
+            </div>
+    </div>
+    <div class="sun">
+        <div>
+            <i class="fa-solid fa-arrows-up-to-line"></i>
+            <i class="fa-regular fa-sun"></i>
+            <i class="fa-solid fa-arrows-down-to-line"></i>
+        </div>
+        <div>
+            <p>Sunrise</p>
+            <p id="para">Sun</p>
+            <p>Sunset</p>
+        </div>
+        <div>
+            <h3 id="sunrise">- -</h3>
+            <h3 id="sunset">- -</h3>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Created by @ Vinay Sharma</p>
+    </div>
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>

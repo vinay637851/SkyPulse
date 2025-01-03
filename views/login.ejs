@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyPulse</title>
+    <link rel="shortcut icon" href="weather.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:  Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-image: url('../backimage.gif');
+            background-position: center;
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+        }
+        .box{
+            width: 30vw;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2vh 0vh;
+            align-items: center;
+            border-radius: 1rem;
+            background-color:rgba(0, 0, 0, 0.75);
+        }
+        button {
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 35vh;
+            justify-content: space-between;
+            padding: 0vw 2vw;
+        }
+        label{
+            display: flex;
+            flex-direction: column;
+            height: 10vh;
+            justify-content: space-around;
+            width: 100%;
+            color: white;
+        }
+        input{
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+            border: 0px solid;
+        }
+        input:focus{
+            outline: 3px solid lightseagreen;
+        }
+        h1{
+            color: #1e90ff;
+        }
+        button:hover {
+            background-color: #005cbf;
+        }
+        p{
+            color: #888;
+        }
+        a{
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>User Login</h1>
+            <form id="login-form" action="/weather/user/login" method="post">
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required autofocus>
+                </label>
+                <label for="password">Password:
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </label>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/weather/signup">Sign up here</a></p>
+        </div>
+    </div>
+</body>
+</html>

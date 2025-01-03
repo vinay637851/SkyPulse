@@ -1,0 +1,32 @@
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# npm package lock
+package-lock.json
+
+# Environment files
+.env
+
+# Operating System files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Build output directories
+/dist/
+build/
+
+# Optional: Add your test coverage folder
+/coverage/
+
+# Optional: Temporary folders
+.tmp/
+
+# Optional: Docker files
+docker-compose.override.yml
