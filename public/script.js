@@ -1,5 +1,4 @@
-
-let key=`1aa6b64906680fbf1189b0cedf9e3c0d`;
+let key='1aa6b64906680fbf1189b0cedf9e3c0d';
 window.onload=function(){
     getdata("jaipur")
 }
@@ -35,7 +34,7 @@ list.addEventListener("click", function (e) {
 
 async function citylist(query) {
     try {
-        let url = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=100&appid=${key}`;
+        let url = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${key}`;
         let res = await fetch(url);
         let suggestions = await res.json();
         list.innerHTML = ""; 
