@@ -73,7 +73,7 @@ async function getdata(city){
         let delay = new Promise(resolve => setTimeout(resolve, 2500));
         await delay;
         if(data.cod==200){
-            console.log(data);
+            console.log(data.main.temp);
             let flag=`https://flagcdn.com/w320/${data.sys.country.toLowerCase()}.png`;
             let flag_imag=await fetch(flag);
             let url2=`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -88,7 +88,7 @@ async function getdata(city){
             document.getElementById("city_name").appendChild(f_image);
             document.getElementById("img").src=img.url;
             document.getElementById("description").innerText=data.weather[0].description;
-            document.getElementById("te   mp").innerText=Math.floor(data.main.temp)+"℃";
+            document.getElementById("temp").innerText=Math.floor(data.main.temp)+"℃";
             document.getElementById("temp2").innerText=Math.floor(data.main.temp)+"℃";
             let temp=Math.floor(data.main.temp)
             if(temp<=0)
