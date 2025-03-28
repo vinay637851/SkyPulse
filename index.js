@@ -7,8 +7,8 @@ let passportLocal=require('passport-local');
 let mysql=require('mysql2');
 let session=require('express-session');
 let bcrypt=require('bcrypt');
-const port = process.env.PORT || 3000;
-   
+const port = process.env.PORT || 5000;
+     
 
 let connection=mysql.createConnection({
     host: process.env.DB_HOST,

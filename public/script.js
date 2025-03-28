@@ -34,10 +34,11 @@ list.addEventListener("click", function (e) {
 
 async function citylist(query) {
     try {
-        let url = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${key}`;
+        let url = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${key}`;
         let res = await fetch(url);
         let suggestions = await res.json();
-        list.innerHTML = ""; 
+        list.innerHTML = "";
+        
         list.style.visibility="visible";
         suggestions.forEach((city) => {
             if(city.state!==undefined){
@@ -72,6 +73,7 @@ async function getdata(city){
         let delay = new Promise(resolve => setTimeout(resolve, 2500));
         await delay;
         if(data.cod==200){
+            console.log(data);
             let flag=`https://flagcdn.com/w320/${data.sys.country.toLowerCase()}.png`;
             let flag_imag=await fetch(flag);
             let url2=`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -79,7 +81,6 @@ async function getdata(city){
             let divs=document.querySelectorAll(".weather-info div");
             for(let i=0;i<divs.length;i++)
                 divs[i].style.visibility="visible";
-            console.log(data)
             let f_image=document.createElement("img");
             f_image.src=flag_imag.url;
             document.querySelector(".loding_container").innerHTML="";
@@ -87,7 +88,7 @@ async function getdata(city){
             document.getElementById("city_name").appendChild(f_image);
             document.getElementById("img").src=img.url;
             document.getElementById("description").innerText=data.weather[0].description;
-            document.getElementById("temp").innerText=Math.floor(data.main.temp)+"℃";
+            document.getElementById("te   mp").innerText=Math.floor(data.main.temp)+"℃";
             document.getElementById("temp2").innerText=Math.floor(data.main.temp)+"℃";
             let temp=Math.floor(data.main.temp)
             if(temp<=0)
@@ -130,7 +131,7 @@ async function getdata(city){
             else
                 document.getElementById("visibility_info").innerText="Thick fog or heavy precipitation, extremely limited visibility, avoid unnecessary travel."
             document.getElementById("cloud").innerText=data.clouds.all+"%";
-            let cloud=data.clouds.all;
+            let cloud=data.clouds.all; 
             if(cloud>=90)
                 document.getElementById("cloud_info").innerText="Overcast,Complete cloud cover with no direct sunlight, minimal visibility of the sky."
             else if(cloud>=50 && cloud<90)
